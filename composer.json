@@ -1,0 +1,23 @@
+{
+    "name": "abhishek6262/nodephp",
+    "description": "A PHP wrapper around Node JS.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Abhishek Prakash",
+            "email": "prakashabhishek6262@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "abhishek6262\\NodePHP\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": "^7.1",
+        "tivie/php-os-detector": "^1.1"
+    }
+}
