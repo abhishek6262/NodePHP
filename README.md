@@ -3,6 +3,8 @@ The PHP instance of Project-Level Node JS.
 
 This library allows you to install node js on your project making it possible for you to use node js even when it is not installed in the system. Moreover, You can consume the power of node js, npm and npx commands with ease using a php class.
 
+[Read Blog Post.](https://www.shade.codes/introducing-project-level-node-js/)
+
 ## Installation
 NodePHP is available on Packagist and installation via Composer is the recommended way to install NodePHP.
 
