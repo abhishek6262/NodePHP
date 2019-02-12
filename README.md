@@ -26,11 +26,15 @@ if (! $npm->exists()) {
 }
 
 if ($npm->packagesExists() && ! $npm->packagesInstalled()) {
-    if ($npm->installPackages()->statusCode() == '0') {
+    $response = $npm->installPackages();
+    
+    if ($response->statusCode() == '0') {
         echo "Packages successfully installed.";
     } else {
         echo "Failed to install the packages.";
     }
+    
+    print_r($response->output());
 }
 ```
 
