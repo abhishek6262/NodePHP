@@ -14,15 +14,27 @@ composer require abhishek6262/nodephp
 
 ## Examples
 ```
-// $node = new \abhishek6262\NodePHP\NodePHP('pathToProjectRoot', 'pathToBinDirectory');
-$node = new \abhishek6262\NodePHP\NodePHP(__DIR__);
+require_once "vendor/autoload.php";
 
-if (! $node->exists()) {
-    $node->install();
+// $environment = new \abhishek6262\NodePHP\System\Environment('projectRootPath', 'binDirectoryPath');
+$environment = new \abhishek6262\NodePHP\System\Environment(__DIR__);
+
+$npm = new \abhishek6262\NodePHP\NPM($environment);
+
+if (! $npm->exists()) {
+    $npm->install();
 }
 
-if ($node->npmPackagesExists() && ! $node->npmPackagesInstalled()) {
-    $node->installNpmPackages();
+if ($npm->packagesExists() && ! $npm->packagesInstalled()) {
+    $response = $npm->installPackages();
+    
+    if ($response->statusCode() == '0') {
+        echo "Packages successfully installed.";
+    } else {
+        echo "Failed to install the packages.";
+    }
+    
+    print_r($response->output());
 }
 ```
 
@@ -31,7 +43,7 @@ if ($node->npmPackagesExists() && ! $node->npmPackagesInstalled()) {
 - [Abhishek Prakash](https://github.com/abhishek6262)
 
 ## Contributing
-Please feel free to fork this package and contribute by submitting a pull request to enhance the functionalities. I will appreciate that a lot. Also please add your name to the credits.
+Please feel free to fork this package and contribute by submitting a pull request to enhance the functionality. I will appreciate that a lot. Also please add your name to the credits.
 
 Kindly [follow me on twitter](https://twitter.com/_the_shade)!
 
