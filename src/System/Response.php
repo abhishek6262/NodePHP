@@ -32,6 +32,8 @@ class Response
 
     /**
      * Returns the status code of the response.
+     * 
+     * @return int
      */
     public function statusCode(): int
     {
