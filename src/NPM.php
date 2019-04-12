@@ -62,7 +62,7 @@ class NPM
      *
      * @throws \Exception
      */
-    public function install(): void
+    public function install()
     {
         $this->environment->install();
     }
