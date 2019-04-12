@@ -45,7 +45,7 @@ class Environment
      *
      * @return void
      */
-    protected function setNodeEnvironment(): void
+    protected function setNodeEnvironment()
     {
         if ($this->nodeEnvironmentExists()) {
             $this->unsetNodeEnvironment();
@@ -93,7 +93,7 @@ class Environment
      *
      * @return void
      */
-    protected function unsetNodeEnvironment(): void
+    protected function unsetNodeEnvironment()
     {
         $env = ':' . $this->getNodeEnvironment();
 
@@ -164,7 +164,7 @@ class Environment
      *
      * @throws \Exception
      */
-    public function install(): void
+    public function install()
     {
         $os = new \Tivie\OS\Detector();
 
